@@ -1,6 +1,6 @@
 # takes string, turns into an array with split, iterates over an array to check for hashtag condition, merges back into string with join
 def get_hashtags(tweet) # assume tweet is a string
-  tweet.scan(/(?:\s|^)#+([a-zA-Z]+)/).flatten 
+  tweet.scan(/(?:\s|^)#+([a-zA-Z]+)[^#]/).flatten 
 end
 
 
