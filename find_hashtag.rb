@@ -1,8 +1,9 @@
 # takes string, turns into an array with split, iterates over an array to check for hashtag condition, merges back into string with join
 def get_hashtags(tweet) # assume tweet is a string
-  tweet.scan(/(?:\s|^)#+([a-zA-Z]+)[^#]/).flatten 
+  tweet.scan(/(?:\s|\#|^)\#([A-Za-z]+)(?=\s|$)/).flatten  # added an option for blank space or end of line, which should fix previous problems
 end
 
+# /(?:\s|^)#+([a-zA-Z]+)[^#]/ was passing 6 rules out of 7 -- not ignoring tweets like #hashtash#hashtag
 
 # scan iterates through a *string*
 # For each match, a result is generated and either added to the result *array* or passed to the block. 
