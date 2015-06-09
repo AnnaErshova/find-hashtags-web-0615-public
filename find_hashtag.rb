@@ -1,9 +1,9 @@
 # takes string, turns into an array with split, iterates over an array to check for hashtag condition, merges back into string with join
 def get_hashtags(tweet) # assume tweet is a string
-  tweet.split(" ").collect do |word|
-    new_word = word.scan(/\A#+[a-zA-Z]+\z/).join(" ").gsub("#","") # returns array
-  end
+  tweet.scan(/\A#+[a-zA-Z]+\z/).flatten # returns array
 end
+
+# this returns an array, which we then flatten, which is what the text seem to want
 
 # Find the Hashtags
 
